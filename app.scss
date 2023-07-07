@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+.main-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    .main-container-header {
+        z-index: 99;
+        position: relative;
+        padding: 0 5%;
+        background: transparent;
+        .top-section-header {
+            display: flex;
+            justify-content: space-between;
+            .left-header {
+                display: flex;
+                .top-left-menu-header,
+                .custom-nav-menu {
+                    padding-top: 1rem;
+                    ul {
+                        margin: 0;
+                        display: flex;
+                        gap: 1.5rem;
+                        list-style: none;
+                        .nav-link {
+                            a {
+                                color: #fff;
+                                text-decoration: none;
+                                font-size: 12px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .container-menus {
+                    position: relative;
+                    @include for-phone-only {
+                        display: none;
+                    }
+                    .custom-nav-menu {
+                        position: absolute;
+                        width: max-content;
+                        top: 35%;
+                        ul {
+                            margin: 0;
+                            display: flex;
+                            list-style: none;
+                            .nav-link {
+                                a {
+                                    color: #fff;
+                                    text-decoration: none;
+                                    font-size: 13px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .right-header {
+                display: flex;
+                padding-top: 1rem;
+                & > div {
+                    margin-left: 1rem;
+                }
+                .social-icons {
+                    img:first-of-type {
+                        margin-right: 0.5rem;
+                    }
+                }
+                .search-bar {
+                    @include for-phone-only {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .main-container-cards-section {
+        max-width: 80%;
+        margin: auto;
+        padding-bottom: 5rem;
+        .title-cards-section {
+            text-align: center;
+            color: #003e6d;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .container-cards {
+            margin-top: 5rem;
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            .card {
+                position: relative;
+                height: 320px;
+                width: 30%;
+                border-radius: 6px;
+                transition: all 2s;
+                @include for-phone-only {
+                    width: 100%;
+                }
+                .title-card {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background: linear-gradient(180deg, #003e6d 0%, rgba(0, 62, 109, 0.4) 100%);
+                    color: #fff;
+                    font-size: 26px;
+                    margin: 0;
+                    padding: 0.85rem 0;
+                    text-align: center;
+                    border-top-left-radius: 6px;
+                    border-top-right-radius: 6px;
+                }
+                .content-card {
+                    opacity: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: calc(10% - 50px);
+                    text-align: center;
+                    width: 100%;
+                    margin: auto 1rem;
+                    p {
+                        color: #fff;
+                        font-weight: 500;
+                    }
+                    .btn-card {
+                        width: 100px;
+                        padding: 0.5rem;
+                        border-radius: 6px;
+                        border: none;
+                        background: #fff;
+                        font-size: 16px;
+                        z-index: 99;
+
+                        a {
+                            color: #003e6d;
+                            font-weight: 600;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                &:hover {
+                    .content-card {
+                        opacity: 1;
+                        z-index: 999;
+                    }
+                }
+                &.one:hover::before {
+                    filter: blur(2px);
+                    cursor: pointer;
+                }
+                &.one::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    background: url(https://compania-nacional-de-chocolates.colombiangreends.com/wp-content/uploads/2023/07/Rectangle-9.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 6px;
+                }
+                &.two:hover::before {
+                    filter: blur(2px);
+                    cursor: pointer;
+                }
+                &.two::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    background: url(https://compania-nacional-de-chocolates.colombiangreends.com/wp-content/uploads/2023/07/Rectangle-9-1.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 6px;
+                }
+                &.three:hover::before {
+                    filter: blur(2px);
+                    cursor: pointer;
+                }
+                &.three::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    background: url(https://compania-nacional-de-chocolates.colombiangreends.com/wp-content/uploads/2023/07/Rectangle-9-2.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 6px;
+                }
+                &.four:hover::before {
+                    filter: blur(2px);
+                    cursor: pointer;
+                }
+                &.four::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    background: url(https://compania-nacional-de-chocolates.colombiangreends.com/wp-content/uploads/2023/07/Rectangle-9-3.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 6px;
+                }
+                &.five:hover::before {
+                    filter: blur(2px);
+                    cursor: pointer;
+                }
+                &.five::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    background: url(https://compania-nacional-de-chocolates.colombiangreends.com/wp-content/uploads/2023/07/Rectangle-9-4.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+    .main-container-footer {
+        width: 100%;
+        border-top: solid 1px #ccc;
+        .top-footer {
+            width: 75%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: auto;
+            padding: 0.85rem 0;
+            @include for-phone-only {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+        }
+        .footer-mid {
+            padding: 1rem 8%;
+            @include for-phone-only {
+                padding: 1rem !important;
+            }
+            .footer-nav {
+                ul {
+                    @include for-phone-only {
+                        padding: 0;
+                    }
+                    list-style: none;
+                    display: flex;
+                    gap: 1rem;
+                    li {
+                        a {
+                            color: #fff;
+                            text-decoration: none;
+                            padding-bottom: 0.2rem;
+                            border-bottom: solid 1px #fff;
+                        }
+                    }
+                }
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #004f89;
+            @include for-phone-only {
+                flex-flow: column;
+            }
+            .line-atention {
+                display: flex;
+                align-items: center;
+                color: #fff;
+                gap: 0.5rem;
+            }
+            .number-tel {
+                color: #fff;
+                margin: 0;
+                margin-top: 0.2rem;
+            }
+            .right-footer-mid {
+                @include for-phone-only {
+                    padding: 0 1.5rem;
+                }
+            }
+        }
+        .footer-bottom {
+            padding: 0.5rem 20%;
+            background: #003e6d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            @include for-phone-only {
+                flex-flow: column;
+                padding: 1rem !important;
+            }
+            .copyright {
+                color: #788695;
+            }
+        }
+    }
+}
+/*slider*/
+.main-container-slider {
+    position: relative;
+    height: 550px;
+    margin-top: -130px;
+    .slider-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .slider {
+        width: 100%;
+        height: 100%;
+
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        &::before {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            left: 5%;
+            position: absolute;
+            top: 48%;
+            width: 35px;
+            height: 35px;
+            border: solid black;
+            border-width: 0 4px 4px 0;
+            padding: 3px;
+            box-sizing: border-box;
+            content: "";
+            z-index: 1;
+            background: none;
+            pointer-events: none;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            right: 5%;
+            position: absolute;
+            top: 48%;
+            width: 35px;
+            height: 35px;
+            border: solid black;
+            border-width: 0 4px 4px 0;
+            padding: 3px;
+            box-sizing: border-box;
+            content: "";
+            z-index: 1;
+            background: none;
+            pointer-events: none;
+        }
+    }
+    .slides {
+        display: flex;
+        overflow-x: scroll;
+        position: relative;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+    }
+    .slide {
+        &:nth-of-type(even) {
+            background-color: #000;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        @include for-phone-only {
+            width: 100vw;
+            height: 75vh;
+        }
+        scroll-snap-align: center;
+        margin-right: 0px;
+        box-sizing: border-box;
+        background: white;
+        transform-origin: center center;
+        transform: scale(1);
+        img {
+            width: 100%;
+            object-fit: cover;
+            @include for-phone-only {
+                height: 100%;
+            }
+        }
+        @media only screen and (min-width: 992px) {
+            .mobile-image {
+                display: none;
+            }
+        }
+        @include for-phone-only {
+            .desktop-image {
+                display: none;
+            }
+        }
+        a {
+            background: none;
+            border: none;
+        }
+    }
+    .slide__text {
+        font-size: 40px;
+        font-weight: bold;
+    }
+    a.slide__prev {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(0);
+        left: 4%;
+        top: 45%;
+        width: 90px;
+        height: 120px;
+    }
+    a.slide__next {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(0);
+        right: 4%;
+        top: 45%;
+        width: 90px;
+        height: 120px;
+    }
+    .slide__prev {
+        position: absolute;
+        top: 48%;
+        width: 35px;
+        height: 35px;
+        border: solid black;
+        border-width: 0 4px 4px 0;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    .slide__next {
+        position: absolute;
+        top: 48%;
+        width: 35px;
+        height: 35px;
+        border: solid black;
+        border-width: 0 4px 4px 0;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+    .slider__nav {
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        width: 200px;
+        margin-left: -100px;
+        text-align: center;
+    }
+    .slider__navlink {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: #fff;
+        margin: 0 10px 0 10px;
+    }
+    .read-article {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 999;
+        color: #000;
+        background: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+        &:hover {
+            background: #d5d5d5;
+            box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
+        }
+    }
+    iframe[sandbox] {
+        .read-article {
+            display: none;
+        }
+    }
+}
+
+.wp-site-blocks {
+    padding: 0;
+    .entry-content {
+        padding: 0;
+        margin: 0;
+    }
+}

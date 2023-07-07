@@ -1,0 +1,14 @@
+{
+  "name": "compania-nacional-de-chocolates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "watch-scss": "sass --watch app.scss:app.css --no-source-map"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.63.6"
+  }
+}
